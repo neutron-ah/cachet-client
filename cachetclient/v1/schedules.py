@@ -61,7 +61,7 @@ class ScheduleManager(Manager):
                 'name': name,
                 'message': message,
                 'status': status,
-                'scheduled_at': scheduled_at
+                'scheduled_at': scheduled_at.strftime('%Y-%m-%d %H:%M') if scheduled_at else None
             }
         )
 
@@ -94,7 +94,7 @@ class ScheduleManager(Manager):
                 name=name,
                 status=status,
                 message=message,
-                scheduled_at=scheduled_at
+                scheduled_at=scheduled_at.strftime('%Y-%m-%d %H:%M') if scheduled_at else None
             ),
         )
 
